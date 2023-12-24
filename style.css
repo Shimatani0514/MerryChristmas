@@ -47,6 +47,71 @@
     animation: snowFall 10s linear;
 }
 
+
+#ligt-up {
+    position: absolute; /* 要素の位置を絶対的に指定 */
+    top: 60%; /* 上からの距離 */
+    left: 50%; /* 左端を親要素の中央に合わせる */
+    padding: 20px 40px;
+    background-color: orange;
+    box-shadow: 0px 5px 10px black;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transform: translateX(-50%); /* 要素全体を真ん中に配置 */
+    transition: all 0.3s;
+    z-index: 9999;
+}
+
+#ligt-up:hover {
+    position: absolute;
+    margin-top: 5px;
+    box-shadow: none;
+}
+
+.light-y {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 0, 0.7); /* 光の色 */
+    pointer-events: none; /* 光の要素をクリック可能にしない */
+}
+
+.light-b {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: rgba(0, 30, 255, 0.7); /* 光の色 */
+    pointer-events: none; /* 光の要素をクリック可能にしない */
+}
+
+.light-r {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: rgba(255, 0, 0, 0.7); /* 光の色 */
+    pointer-events: none; /* 光の要素をクリック可能にしない */
+}
+
+.illumination {
+    animation: shine 1s ease-in-out infinite; /* 光るアニメーション */
+}
+
+@keyframes shine {/* 光の点滅 */
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+  
+
+
 @keyframes snowFall {
     0% { 
         opacity: 0;
@@ -86,3 +151,4 @@
         top: 100vh;
     }
 }
+
