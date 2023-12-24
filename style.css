@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.Merry-container {
+    background-image: url("img/winter-4680354_1280.jpg");
+    width: 100%;
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    overflow: hidden; /* はみ出たものを要素を隠す */
+    z-index: -1; /* 要素の下に配置 */
+}
+
+.Merry-container::before { /* 疑似要素に内容を追加するための空のコンテンツを指定 */
+    content: ""; /* 。疑似要素にはコンテンツが必要なため、空の文字列を指定 */
+    position: absolute;
+    /* 親要素の上下左右をいっぱいに広げる設定 */
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.3); /* 黒に近い色で透明度を指定 */
+    z-index: -1; /* 要素の下に配置 */
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* 高さを画面いっぱいにしないと画面中央にいかない */
+    color: white;
+    font-size: 100px;
+}
+
+
+.snow {
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    /* 
+    width: 50px;
+    height: 50px;
+    */
+    animation: snowFall 10s linear;
+}
+
+@keyframes snowFall {
+    0% { 
+        opacity: 0;
+        top: 0;
+        transform: translateX(5px);
+    }  
+    10% {
+        opacity: 1;
+        transform: translateX(-5px);
+    }
+    20% {
+        opacity: 1;
+        transform: translateX(5px);
+    }
+    30% {
+        opacity: 1;
+        transform: translateX(-5px);
+    }
+    50% {
+        opacity: 1;
+        transform: translateX(5px);
+    }
+    60% {
+        opacity: 1;
+        transform: translateX(-5px);
+    }
+    80% {
+        opacity: 1;
+        transform: translateX(5px);
+    }
+    90% {
+        opacity: 1;
+        transform: translateX(-5px);
+    } 
+    100% {
+        opacity: 0;
+        top: 100vh;
+    }
+}
